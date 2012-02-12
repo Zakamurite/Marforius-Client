@@ -1,0 +1,11 @@
+## Interface: 30300
+## Title: ArcAddons-Tweaks
+## Author: Marforius
+## Version: Release 3
+## Notes: This addon is a collection of tweaks.
+## URL: http://arcemu.org/
+## X-Revision: 3
+## DefaultState: Enabled
+## LoadOnDemand: 0
+
+AGC.lua
