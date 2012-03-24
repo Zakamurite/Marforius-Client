@@ -46,5 +46,5 @@ Additional terms beyond these two clauses can be found at: http://sam.zoy.org/wt
 
 = Contact the Developers  
 
-irc.freenode.net #ArcEmu
+irc.rizon.net #Marforius
 
