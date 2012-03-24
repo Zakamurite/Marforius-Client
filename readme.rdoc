@@ -6,8 +6,8 @@ control over what it does, or exploit on private servers.
 
 = Installation & Use
 
-The only thing you have to do to it is import your MPQ files into it, and only your MPQ files.
-This means both your data and locale folder, this has <b>NOT BEEN TESTED WITH OTHER LOCALES THAN enUS</b>
+You need to simply copy all of the contents of the folder "COPY MY CONTENTS" and paste them into your 3.3.5a Wow folder and tell it to overwrite all of the files as necessary.
+<b>NOT BEEN TESTED WITH OTHER LOCALES THAN enUS</b>
 
 
 = Known bugs 
