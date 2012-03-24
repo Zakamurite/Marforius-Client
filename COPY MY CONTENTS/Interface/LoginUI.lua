@@ -1,7 +1,7 @@
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 --|||| Serveralert |||||||
 
---SERVER_ALERT_URL = "http://marforius.99k.org/alert.txt";
+SERVER_ALERT_URL = "http://marforius.99k.org/alert.txt";
 
 --SERVER_ALERT_URL = change if you want (Needs to point to a alert.txt file or directory)
 -- PROPER FORMATTING:
