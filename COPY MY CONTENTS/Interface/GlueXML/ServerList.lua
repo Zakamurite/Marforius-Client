@@ -31,6 +31,7 @@ function ServerList_OnShow()
 				if (vx.ServerList[ServerIndex].Portal) then
 					ServerTooltip = "Portal:''"..vx.ServerList[ServerIndex].Portal.."''";
 				end
+				-- TODO
 				--if ServerTooltip then
 				--	ServerTooltip = ServerTooltip.."  ";
 				--else

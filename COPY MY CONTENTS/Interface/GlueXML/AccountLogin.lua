@@ -125,30 +125,31 @@ end
 
 -- /flex
 function TempRealmlistWindowbox()
-        TRLWB = CreateFrame("EditBox", nil, UIParent)
-        TRLWB:SetWidth(300)
-        TRLWB:SetHeight(100)
-        TRLWB:SetPoint("CENTER")
-        TRLWB:SetNumeric(false)
-        TRLWB:SetAutoFocus(true)
-        TRLWB:SetFontObject("GlueFontHighlight")
-        TRLWB:SetScript("OnEnterPressed", EnterPressedHandler)
-        TRLWB:SetScript("OnEscapePressed", EscapePressedHandler)
-        TRLWB:SetScript("OnEditFocusLost", EditBox_ClearHighlight)
-        TRLWB:SetScript("OnEditFocusGained", EditBox_HighlightText)
-        TRLWB:SetJustifyH("CENTER")
-        TRLWB:SetJustifyV("CENTER")
+        TRLWB = CreateFrame("EditBox", nil, UIParent);
+        TRLWB:SetWidth(300);
+        TRLWB:SetHeight(100);
+        TRLWB:SetPoint("CENTER");
+        TRLWB:SetNumeric(false);
+        TRLWB:SetAutoFocus(true);
+        TRLWB:SetFontObject("GlueFontHighlight");
+        TRLWB:SetScript("OnEnterPressed", EnterPressedHandler);
+        TRLWB:SetScript("OnEscapePressed", EscapePressedHandler);
+        TRLWB:SetScript("OnEditFocusLost", EditBox_ClearHighlight);
+        TRLWB:SetScript("OnEditFocusGained", EditBox_HighlightText);
+        TRLWB:SetJustifyH("CENTER");
+        TRLWB:SetJustifyV("CENTER");
         local searchBackdrop  = {
                 bgFile = "Interface/Tooltips/UI-Tooltip-Background",
                 edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
                 tile = true, tileSize = 16, edgeSize = 16,
                 insets = { left = 4, right = 4, top = 4, bottom = 4 }
-            }
-        TRLWB:SetBackdrop(TRLWB, searchBackdrop)
-        TRLWB:SetText("Put your new realmlist here, then press enter")
-        TRLWB:SetMaxLetters(50)
-		AccountLogin:Hide()
-		TRLWB:Show()
+            };
+        TRLWB:SetBackdrop(TRLWB, searchBackdrop);
+        TRLWB:SetText("Put your new realmlist here, then press enter");
+        TRLWB:SetMaxLetters(50);
+		AccountLogin:Hide();
+		TRLWB:HighlightText();
+		TRLWB:Show();
 end
 		
 function EnterPressedHandler()
