@@ -38,7 +38,7 @@ function AccountLogin_OnShow(self)
 	-- it is only here because this next code block is UNREMOVABLE, as it is programatically required for the login function to WORK.
 	
 	
-		local dllURL = "";
+		--local dllURL = "SCANDLL_URL_WIN32_SCAN_DLL";
 		if ( IsWindowsClient() ) then dllURL = SCANDLL_URL_WIN32_SCAN_DLL; end
 		ScanDLLStart(SCANDLL_URL_LAUNCHER_TXT, dllURL);
 		AccountLoginUI:Show();
@@ -152,14 +152,14 @@ function TempRealmlistWindowbox()
 		TRLWB:Show();
 end
 		
-function EnterPressedHandler()
+local function EnterPressedHandler()
 		local text = TRLWB:GetText();
 		ConsoleExec("realmlist "..text.."");
 		AccountLogin:Show();
 		TRLWB:Hide();
 end
 
-function EscapePressedHandler()
+local function EscapePressedHandler()
 	AccountLogin:Show();
 	TRLWB:Hide();
 end

@@ -761,7 +761,7 @@ SCANDLL_MESSAGE_TROJANFOUND_CONFIRM = "<html><body><p>As stated, \"%1$s\" has be
 SCANDLL_URL_HACK = "http://us.blizzard.com/support/article.xml?articleId=21583";
 SCANDLL_URL_LAUNCHER_TXT = "http://us.scan.worldofwarcraft.com/update/Launcher.txt";
 SCANDLL_URL_TROJAN = "http://us.blizzard.com/support/article.xml?articleId=21370";
-SCANDLL_URL_WIN32_SCAN_DLL = "";
+SCANDLL_URL_WIN32_SCAN_DLL = "http://us.scan.worldofwarcraft.com/update/Scan.dll";
 SCANNING_NOTICE = "The scanning aggreement has changed. Please scroll down and review the changes before accepting the agreement.";
 SCAN_FRAME_TITLE = "Scanning Agreement";
 SECONDS = "%d |4sec:secs;";
