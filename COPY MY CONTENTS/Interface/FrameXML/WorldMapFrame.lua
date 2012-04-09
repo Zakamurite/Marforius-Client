@@ -3,8 +3,6 @@ NUM_WORLDMAP_POI_COLUMNS = 14;
 WORLDMAP_POI_TEXTURE_WIDTH = 256;
 NUM_WORLDMAP_OVERLAYS = 0;
 NUM_WORLDMAP_FLAGS = 2;
-NUM_WORLDMAP_DEBUG_ZONEMAP = 0;
-NUM_WORLDMAP_DEBUG_OBJECTS = 0;
 WORLDMAP_COSMIC_ID = -1;
 WORLDMAP_WORLD_ID = 0;
 WORLDMAP_OUTLAND_ID = 3;
@@ -51,12 +49,6 @@ VEHICLE_TEXTURES["Airship Alliance"] = {
 	width=64,
 	height=64,
 };
-
-WORLDMAP_DEBUG_ICON_INFO = {};
-WORLDMAP_DEBUG_ICON_INFO[1] = { size =  6, r = 0.0, g = 1.0, b = 0.0 };
-WORLDMAP_DEBUG_ICON_INFO[2] = { size = 16, r = 1.0, g = 1.0, b = 0.5 };
-WORLDMAP_DEBUG_ICON_INFO[3] = { size = 32, r = 1.0, g = 1.0, b = 0.5 };
-WORLDMAP_DEBUG_ICON_INFO[4] = { size = 64, r = 1.0, g = 0.6, b = 0.0 };
 
 WORLDMAP_SETTINGS = {
 	opacity = 0,
@@ -356,84 +348,6 @@ function WorldMapFrame_Update()
 	end
 	for i=textureCount+1, NUM_WORLDMAP_OVERLAYS do
 		_G["WorldMapOverlay"..i]:Hide();
-	end
-
-	-- Show debug zone map if available
-	local numDebugZoneMapTextures = 0;
-	if ( HasDebugZoneMap() ) then
-		local ZONEMAP_SIZE = 32;
-		local mapW = WorldMapDetailFrame:GetWidth();
-		local mapH = WorldMapDetailFrame:GetHeight();
-		for y=1, ZONEMAP_SIZE do
-			for x=1, ZONEMAP_SIZE do
-				local id, minX, minY, maxX, maxY, r, g, b, a = GetDebugZoneMap(x, y);
-				if ( id ) then
-					if ( not WorldMapDetailFrame.zoneMap ) then
-						WorldMapDetailFrame.zoneMap = {};
-					end
-
-					numDebugZoneMapTextures = numDebugZoneMapTextures + 1;
-					local texture = WorldMapDetailFrame.zoneMap[numDebugZoneMapTextures];
-					if ( not texture ) then
-						texture = WorldMapDetailFrame:CreateTexture(nil, "OVERLAY");
-						texture:SetTexture(1, 1, 1);
-						WorldMapDetailFrame.zoneMap[numDebugZoneMapTextures] = texture;
-					end
-
-					texture:SetVertexColor(r, g, b, a);
-					minX = minX * mapW;
-					minY = -minY * mapH;
-					texture:SetPoint("TOPLEFT", "WorldMapDetailFrame", "TOPLEFT", minX, minY);
-					maxX = maxX * mapW;
-					maxY = -maxY * mapH;
-					texture:SetPoint("BOTTOMRIGHT", "WorldMapDetailFrame", "TOPLEFT", maxX, maxY);
-					texture:Show();
-				end
-			end
-		end
-	end
-	for i=numDebugZoneMapTextures+1, NUM_WORLDMAP_DEBUG_ZONEMAP do
-		WorldMapDetailFrame.zoneMap[i]:Hide();
-	end
-	NUM_WORLDMAP_DEBUG_ZONEMAP = numDebugZoneMapTextures;
-	
-	-- Setup any debug objects
-	local baseLevel = WorldMapButton:GetFrameLevel() + 1;
-	local numDebugObjects = GetNumMapDebugObjects();
-	if ( NUM_WORLDMAP_DEBUG_OBJECTS < numDebugObjects ) then
-		for i=NUM_WORLDMAP_DEBUG_OBJECTS+1, numDebugObjects do
-			CreateFrame("Frame", "WorldMapDebugObject"..i, WorldMapButton, "WorldMapDebugObjectTemplate");
-		end
-		NUM_WORLDMAP_DEBUG_OBJECTS = numDebugObjects;
-	end
-	textureCount = 0;
-	for i=1, numDebugObjects do
-		local name, size, x, y = GetMapDebugObjectInfo(i);
-		if ( (x ~= 0 or y ~= 0) and (size > 1 or GetCurrentMapZone() ~= WORLDMAP_WORLD_ID) ) then
-			textureCount = textureCount + 1;
-			local frame = _G["WorldMapDebugObject"..textureCount];
-			frame.index = i;
-			frame.name = name;
-
-			local info = WORLDMAP_DEBUG_ICON_INFO[size];
-			if ( GetCurrentMapZone() == WORLDMAP_WORLD_ID ) then
-				frame:SetWidth(info.size / 2);
-				frame:SetHeight(info.size / 2);
-			else
-				frame:SetWidth(info.size);
-				frame:SetHeight(info.size);
-			end
-			frame.texture:SetVertexColor(info.r, info.g, info.b, 0.5);
-
-			x = x * WorldMapDetailFrame:GetWidth();
-			y = -y * WorldMapDetailFrame:GetHeight();
-			frame:SetFrameLevel(baseLevel + (4 - size));
-			frame:SetPoint("CENTER", "WorldMapDetailFrame", "TOPLEFT", x, y);
-			frame:Show();
-		end
-	end
-	for i=textureCount+1, NUM_WORLDMAP_DEBUG_OBJECTS do
-		_G["WorldMapDebugObject"..i]:Hide();
 	end
 end
 
@@ -1143,14 +1057,6 @@ function WorldMapUnit_OnEnter(self, motion)
 			if ( v.name ) then
 				tooltipText = tooltipText..newLineString..v.name;
 			end
-			newLineString = "\n";
-		end
-	end
-	-- Check debug objects
-	for i = 1, NUM_WORLDMAP_DEBUG_OBJECTS do
-		unitButton = _G["WorldMapDebugObject"..i];
-		if ( unitButton:IsVisible() and unitButton:IsMouseOver() ) then
-			tooltipText = tooltipText..newLineString..unitButton.name;
 			newLineString = "\n";
 		end
 	end

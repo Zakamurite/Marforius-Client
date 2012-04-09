@@ -468,7 +468,7 @@ function UIParent_OnEvent(self, event, ...)
 			GMChatFrame_LoadUI();
 			GMChatFrame:Show()
 			local info = ChatTypeInfo["WHISPER"];
-			GMChatFrame:AddMessage(format(GM_CHAT_LAST_SESSION, "|TInterface\\ChatFrame\\UI-ChatIcon-Blizz.blp:0:2:0:-3|t "..
+			GMChatFrame:AddMessage(format(GM_CHAT_LAST_SESSION, "\124cff00B4FF\124h <STAFF>\124h\124r "..
 			"|HplayerGM:"..lastTalkedToGM.."|h".."["..lastTalkedToGM.."]".."|h"), info.r, info.g, info.b, info.id);
 		end
 		return;

@@ -771,42 +771,6 @@
 		TakeScreenshot();
 	</Binding>
 
-	<!-- Debug function key bindings -->
-	<Binding name="TOGGLESTATS" hidden="true" debug="true">
-		ToggleStats();
-	</Binding>
-	<Binding name="TOGGLETRIS" hidden="true" debug="true">
-		ToggleTris();
-	</Binding>
-	<Binding name="TOGGLEPORTALS" hidden="true" debug="true">
-		TogglePortals();
-	</Binding>
-	<Binding name="TOGGLECOLLISION" hidden="true" debug="true">
-		ToggleCollision();
-	</Binding>
-	<Binding name="TOGGLECOLLISIONDISPLAY" hidden="true" debug="true">
-		ToggleCollisionDisplay();
-	</Binding>
-	<Binding name="TOGGLEPLAYERBOUNDS" hidden="true" debug="true">
-		TogglePlayerBounds();
-	</Binding>
-	<Binding name="TOGGLEPERFORMANCEDISPLAY" hidden="true" debug="true">
-		TogglePerformanceDisplay();
-	</Binding>
-  <Binding name="TOGGLEPERFORMANCEPAUSE" hidden="true" debug="true">
-    TogglePerformancePause();
-  </Binding>
-  <Binding name="TOGGLEPERFORMANCEVALUES" hidden="true" debug="true">
-		TogglePerformanceValues();
-	</Binding>
-	<Binding name="RESETPERFORMANCEVALUES" hidden="true" debug="true">
-		ResetPerformanceValues();
-	</Binding>
-	<!-- Commentator Mode Bindings -->
-	<Binding name="TOGGLECOMMENTATOR" hidden="true" debug="true">
-		ToggleCommentatorMode();
-	</Binding>
-
 	<!-- Camera key bindings -->
 	<Binding name="NEXTVIEW" header="CAMERA">
 		NextView();
@@ -1271,14 +1235,14 @@
 	</Binding>
 
 <!-- Hidden bindings -->
-	<Binding name="TURNORACTION" runOnUp="true" hidden="true">
+	<Binding name="TURNORACTION" runOnUp="true" hidden="false">
 		if ( keystate == "down" ) then
 			TurnOrActionStart();
 		else
 			TurnOrActionStop();
 		end
 	</Binding>
-	<Binding name="CAMERAORSELECTORMOVE" runOnUp="true" hidden="true">
+	<Binding name="CAMERAORSELECTORMOVE" runOnUp="true" hidden="false">
 		if ( keystate == "down" ) then
 			CameraOrSelectOrMoveStart();
 		else

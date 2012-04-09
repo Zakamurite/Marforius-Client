@@ -7,9 +7,9 @@
 
 --DEBUG FIXME:
 function LFGDebug(text, ...)
-	if ( GetCVarBool("lfgDebug") ) then
+	--if ( GetCVarBool("lfgDebug") ) then -- detailed debug
 		ConsolePrint("LFGLua: "..format(text, ...));
-	end
+	--end
 end
 
 LFG_RETURN_VALUES = {
