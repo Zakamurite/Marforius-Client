@@ -7,7 +7,7 @@ control over what it does, or exploit on private servers.
 = Installation & Use
 
 You need to simply copy all of the contents of the folder "COPY MY CONTENTS" and paste them into your 3.3.5a Wow folder and tell it to overwrite all of the files as necessary.
-<b>NOT BEEN TESTED WITH OTHER LOCALES THAN enUS</b>
+<b>ONLY COMPATIBLE WITH enUS</b>
 
 
 = Why should I use this?
