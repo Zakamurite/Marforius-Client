@@ -13,8 +13,9 @@ You need to simply copy all of the contents of the folder "COPY MY CONTENTS" and
 = Why should I use this?
 
 * To reduce the client's size on disk by 4~ GBs.
-* To enable a scripter or developer to have full control of the client's interface and access secured methods in Lua.
-* Built in account selector/saver
+* To enable a scripter or developer to have full control of the client's interface and access the secured API methods in Lua.
+* To enable anyone to edit files that would otherwise be protected.
+* Built in per-saved-server and global account selector/saver
 * Built in server selector (saver planned)
 * Built in temporary realmlist changer
 * Various bugfixes to the client.
