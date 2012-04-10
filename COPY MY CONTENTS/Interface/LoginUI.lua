@@ -10,6 +10,7 @@ SERVER_ALERT_URL = "http://marforius.99k.org/alert.txt";
 
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 --|||| list of servers |||||||
+-- THESE ARE EXAMPLES, ADD YOUR OWN
 vx = {
 ["ServerList"] = {
 -- 1 server
@@ -86,19 +87,19 @@ vx = {
 },
 ["SceneList"] = {
 -- basic scenes. scene is set randomly from this list
-"cl", -- classic
+--"cl", -- classic
 "bc", -- burning crusade
-"lk", -- lich king
-"be", -- blood elf
-"dk", -- death knight
-"dr", -- draenei
-"dg", -- dwarf/gnome
-"hm", -- human
-"ne", -- night elf
-"ot", -- orc/trol
-"ud", -- undead
-"tr", -- tauren
-"cs", -- caracterselect
+--"lk", -- lich king
+--"be", -- blood elf
+--"dk", -- death knight
+--"dr", -- draenei
+--"dg", -- dwarf/gnome
+--"hm", -- human
+--"ne", -- night elf
+--"ot", -- orc/trol
+--"ud", -- undead
+--"tr", -- tauren
+--"cs", -- caracterselect
 --"blank", -- black clear screen
 
 -- you can set your own texture (internal or external)
@@ -115,8 +116,8 @@ vx = {
 --"Interface\\Glues\\Models\\UI_MainMenu\\UI_MainMenu.m2",
 },
 ["LoginMusic"] ={
-{["Track"] = "cl"}, -- duration for basic tracks is not required
---{["Track"] = "bc"}, -- if you don't want random selection after time of track is finished,
+--{["Track"] = "cl"}, -- duration for basic tracks is not required
+{["Track"] = "bc"}, -- if you don't want random selection after time of track is finished,
 --{["Track"] = "lk"}, -- keep only one string
 -- use your own internal or external. you can use more - just add string like below
 -- duration required and must be in seconds, path must be with double slashes.
