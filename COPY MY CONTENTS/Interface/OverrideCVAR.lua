@@ -25,10 +25,6 @@
  -- Preformance fix
 SetCVar( "gxFixLag", 0);
 
--- debug stuff
-SetCVar( "lfgDebug", 1);
-
-
 -- These things should be default, not forced on the user to read and know where their money is "supposedly" going to
 ConsoleExec("SET equipmentManager 1");
 SetCVar( "previewtalents", 1);
