@@ -2,37 +2,36 @@
 -- This would not be a good place to put a setting that the user MIGHT WANT TO change.
 
  -- supposed bugfix for multiple processor machines
- ConsoleExec("set processAffinityMask 21845");
+ConsoleExec("SET processAffinityMask 21845");
 
  -- Alternative timing code
- ConsoleExec("set timingmethod 0");
+ConsoleExec("SET timingmethod 0");
  
- ConsoleExec("set cameraDistanceMax 50");
+ -- maximum camera distance
+ConsoleExec("SET cameraDistanceMax 50");
  
  -- Bugfix (confirmed) CharacterAmbient not turning on by default
- ConsoleExec("characterambient");
+ConsoleExec("characterambient");
  
  -- Sets camera to the old traditional movement (only adjust when moving, only horizontal)
- ConsoleExec("set cameraSmoothStyle 1");
+ConsoleExec("SET cameraSmoothStyle 1");
  
  -- Bugfixes for things that cant be changed in Lua
- ConsoleExec("set readTOS 1");
- ConsoleExec("set readEULA 1");
- ConsoleExec("set movie 0");
- ConsoleExec("set showToolsUI 0");
+ -- each of these cannot be changed from what they are
+ConsoleExec("SET readTOS 1");
+ConsoleExec("SET readEULA 1");
+ConsoleExec("SET movie 0");
+ConsoleExec("SET showToolsUI 0");
  
  
  -- Preformance fix
-SetCVar( "gxFixLag", 0);
+ConsoleExec("SET gxFixLag 0");
 
 -- These things should be default, not forced on the user to read and know where their money is "supposedly" going to
 ConsoleExec("SET equipmentManager 1");
-SetCVar( "previewtalents", 1);
+ConsoleExec("SET previewtalents 1");
  
  -- d3d9ex has better preformance in general over default d3d, cache tweaks are just that
- -- on 64 bit machines, assuming it would take advantage of more memory
-if ( IsWindowsClient() ) then
-	ConsoleExec("gxapi d3d9ex");
-	ConsoleExec("gxtexturecachesize 0"); -- Put this here to let the client dynamically decide whats going on with caching
-	ConsoleExec("texturecachesize 64"); -- This will revert to 32 on 32 bit systems, obvious
-end
+ConsoleExec("SET gxapi d3d9ex");
+ConsoleExec("SET gxtexturecachesize 0"); -- Put this here to let the client dynamically decide whats going on with caching
+ConsoleExec("SET texturecachesize 64"); -- This will revert to 32 on 32 bit systems

@@ -1,5 +1,5 @@
-..\LoginUI.lua
 ..\OverrideCVAR.lua
+..\LoginUI.lua
 vx_vars_init.lua
 
 GlueStrings.lua
