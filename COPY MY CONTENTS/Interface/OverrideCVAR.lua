@@ -32,6 +32,8 @@ ConsoleExec("SET equipmentManager 1");
 ConsoleExec("SET previewtalents 1");
  
  -- d3d9ex has better preformance in general over default d3d, cache tweaks are just that
+ if ( IsWindowsClient() ) then
 ConsoleExec("SET gxapi d3d9ex");
+end
 ConsoleExec("SET gxtexturecachesize 0"); -- Put this here to let the client dynamically decide whats going on with caching
 ConsoleExec("SET texturecachesize 64"); -- This will revert to 32 on 32 bit systems
